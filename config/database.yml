@@ -4,9 +4,14 @@ default: &default
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PWD'] %>
   checkout_timeout: <%= ENV['DB_TIMEOUT'] %>
+  database: <%= ENV['DB_NAME'] %>
   host: <%= ENV['DB_HOST'] %>
   port: <%= ENV['DB_PORT'] %>
 
 development:
   <<: *default
-  database: <%= ENV['DB_NAME'] %>
+  database: 'tracker_dev'
+
+test:
+  <<: *default
+  database: 'tracker_test'

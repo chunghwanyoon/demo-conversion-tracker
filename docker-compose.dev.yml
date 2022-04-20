@@ -1,7 +1,7 @@
 # docker-compose.yml.development
 version: '3.8'
 services:
-  database:
+  tracker_mysql:
     platform: linux/x86_64 # for m1 mac error
     image: mysql:latest
     container_name: demo-conversion-tracker-mysql
@@ -11,7 +11,7 @@ services:
       MYSQL_ROOT_USER: ${DB_USERNAME}
       MYSQL_DATABASE: ${DB_NAME}
     ports:
-      - 3306:3306
+      - ${DB_PORT}:3306
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci

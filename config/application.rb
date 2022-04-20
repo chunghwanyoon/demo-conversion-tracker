@@ -37,6 +37,9 @@ module DemoConversionTracker
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Let Rails API uses ActionDispatch::Flash for cookie, session
+    config.middleware.use ActionDispatch::Flash
+
     # CORS
     config.middleware.insert_before 0, Rack::Cors do
       allow do
