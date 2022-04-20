@@ -22,6 +22,16 @@ gem 'puma', '~> 5.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+### DB Adapter
+# Current DBMS: MariaDB 10.1.6
+gem "mysql2", "~> 0.5"
+
+### For HTTP Connection Pool
+gem "connection_pool"
+gem "faraday"
+gem "faraday_middleware"
+gem "net-http-persistent"
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
