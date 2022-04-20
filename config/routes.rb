@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       resource :auth, only: [:sign_up], controller: "auth" do
         post "sign_up", on: :collection
       end
+
+      resources :games do
+
+      end
     end
   end
 end

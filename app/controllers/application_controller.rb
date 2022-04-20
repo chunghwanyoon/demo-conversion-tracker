@@ -7,10 +7,10 @@ class ApplicationController < ActionController::API
       if current_user.nil?
         raise_unauthorized_exception
       else
-        cookies[:auth_token] = {
-          value: cookies[:auth_token],
-          expires: 2.hours.from_now
-        }
+        # cookies[:auth_token] = {
+        #   value: cookies[:auth_token],
+        #   expires: 2.hours.from_now
+        # }
       end
     end
   end
