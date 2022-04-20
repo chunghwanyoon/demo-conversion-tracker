@@ -37,6 +37,14 @@ module DemoConversionTracker
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # CORS
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins "*"
+        resource "/api/*", headers: :any, credentials: true, methods: [:get, :post, :options, :put, :delete]
+      end
+    end
+
     # For Default Locale
     config.active_record.default_timezone = :local
     config.time_zone = "Seoul"
