@@ -36,5 +36,16 @@ module DemoConversionTracker
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # For Default Locale
+    config.active_record.default_timezone = :local
+    config.time_zone = "Seoul"
+
+    # For Auto Loading
+    config.autoload_paths += Dir[
+      Rails.root.join("app", "libs", "**"),
+      Rails.root.join("app", "modules", "**"),
+      Rails.root.join("app", "services", "**")
+    ]
   end
 end
