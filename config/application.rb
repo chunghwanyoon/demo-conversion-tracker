@@ -41,7 +41,7 @@ module DemoConversionTracker
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins "*"
-        resource "/api/*", headers: :any, credentials: true, methods: [:get, :post, :options, :put, :delete]
+        resource "/api/*", headers: :any, credentials: false, methods: [:get, :post, :options, :put, :delete]
       end
     end
 
