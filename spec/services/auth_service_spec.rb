@@ -1,11 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe AuthService, type: :integration do
+RSpec.describe AuthService do
   describe "Auth Service Test" do
-    it 'can build a member' do
-      member = AuthService.instance.build_member(account_name: "service_test_member_name", plain_password: "123")
-      expect(member.account_name).to eq("service_test_member_name")
+    context 'auth service test' do
+      let(:member_param) {
+        normal_test_params
+      }
+      it 'can build a member' do
+        member = AuthService.instance.build_member(
+          account_name: member_param[:account_name],
+          plain_password: member_param[:password]
+        )
+        expect(member.account_name).to eq(member_param[:account_name])
+      end
     end
   end
-
 end
