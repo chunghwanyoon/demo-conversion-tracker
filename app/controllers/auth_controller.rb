@@ -12,6 +12,6 @@ class AuthController < ApplicationController
   private
 
   def sign_up_params
-    params.require(:auth).permit(:account_name, :password)
+    params.permit(:account_name, :password)
   end
 end
