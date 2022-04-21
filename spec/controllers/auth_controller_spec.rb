@@ -7,6 +7,7 @@ RSpec.describe AuthController, type: :controller do
       puts response
       puts response.body
       expect(response).to be_successful
+      expect(response).to have_http_status(:success)
     end
   end
 end
