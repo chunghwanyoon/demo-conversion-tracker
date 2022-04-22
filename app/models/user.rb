@@ -3,7 +3,12 @@ class User < ApplicationRecord
 
   def self.serialize_params
     {
-      only: [:id, :account_name, :active]
+      only: [:id, :account_name, :active],
+      methods: [:something_constant]
     }
+  end
+
+  def something_constant
+    "CONSTANT"
   end
 end

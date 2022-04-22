@@ -1,5 +1,5 @@
-module ActiveRecord
-  class Base
-    include CommonModules::ModelSerializer
-  end
-end
+# module ActiveRecord
+#   class Base
+#     include CommonModules::ModelSerializer
+#   end
+# end

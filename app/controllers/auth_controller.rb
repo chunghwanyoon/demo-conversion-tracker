@@ -6,7 +6,7 @@ class AuthController < ApplicationController
       plain_password: sign_up_params[:password]
     )
 
-    render :json => user.as_json(User.serialize_params)
+    render :json => user.show
   end
 
   private
